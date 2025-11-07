@@ -1,0 +1,11 @@
+<h2>All Products</h2>
+<a href="{% url 'add_product' %}">Add Product</a>
+<ul>
+  {% for product in products %}
+  <li>
+    <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - ₹{{ product.price }}
+    <a href="{% url 'update_product' product.id %}">Edit</a>
+    <a href="{% url 'delete_product' product.id %}">Delete</a>
+  </li>
+  {% endfor %}
+</ul>
